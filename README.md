@@ -1,63 +1,46 @@
-# Pixie-Net XL Release Notes
+# Pixie-Net Release Notes
 
 
-## Version 3.32, November 2022
+## Version 2.24, December 2022
 Release updates include
--	Debugged and tested CFD in variant 4W
+ 
+- Added CFD debug values to LM data
 
-Known bugs:
-- Variant 1: The automatic ADC initialization at boot time sometimes fails. This will be reported as a warning by ./progfippi. To correct, execute ./adcinit manually from the command line.  
+Supported variants are <br/>
+*Hardware Revision B*
+| Firmware Type |	Firmware ID |	Firmware Revision |	Software Revision | Documentation |
+| --------------| ------------| ----------------- | ----------------- | ------------- |
+| PSA | 0x1223 | [sd-bootfiles-pn-PSA: 2.23](./release_packages/sd-bootfiles-pn-PSA-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
+| Standard | 0x0220 | [sd-bootfiles-pn-STD: 2.20](./release_packages/sd-bootfiles-pn-STD-2p20.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
 
-Supported variants are 
 
-| Part Number | Variant ID	| Hardware Revision |	Firmware Revision |	Software Revision |
-| ----------- | ----------- | ----------------- | ----------------- | ----------------- |
-| Pixie-Net-8-14-500 |7  | DB06, 8  channel, <br/> 14 bit, 500 MSPS, <br/> 10G <br/> Z-Turn Zynq controller | 0x3171 |	[sw-arm-pnxl: 3.32](./release_packages/sw-arm-pnxl-3p32.zip) <br/> sw-host-pnxl: 09072022 <br/> [sw-igor-pnxl: 6.21](./release_packages/sw-igor-pnxl-6p21.zip) <br/> sd-bootfiles-pnxl: ZT-3.25 <br/> sd-image-pnxl: 09072022 <br/> [Pixie_Net_XL_Manual: 3.32](./release_packages/Pixie_Net_XL_Manual.pdf) |
-| Pixie-Net-16-14-250 | 4	 | DB04, 16  channel, <br/> 14 bit, 250 MSPS, <br/> 10G <br/> Z-Turn Zynq controller <br/> Optional TTCL adapter |	0x3141 |   -"- |
-| Pixie-Net-8-14-125 | 1	 | DB01, 8  channel, <br/> 14 bit, 125 MSPS, <br/> 10G <br/> Z-Turn Zynq controller |	0x3111 | -"- |	
-| Pixie-Net-16-14-250W | 4W	| DB04, 16  channel, <br/> 14 bit, 250 MSPS, <br/> 1G (White Rabbit) <br/> MicroZed Zynq controller	| 0x2540 <br/> (unchanged from pre-release) |	[sw-arm-pnxl: 3.32](./release_packages/sw-arm-pnxl-3p32.zip) <br/>  sw-host-pnxl: 09072022 <br/>  [sw-igor-pnxl: 6.21](./release_packages/sw-igor-pnxl-6p21.zip) <br/> sd-bootfiles-pnxl: MZ-3.25 <br/>  sd-image-pnxl: 09072022 <br/> [Pixie_Net_XL_Manual: 3.32](./release_packages/Pixie_Net_XL_Manual.pdf) |
+
  
 ## Release Information
-A full Pixie-Net XL software/firmware release consists of the following components
+A full Pixie-Net  software/firmware release consists of the following components
 
 | Component name | Description	| Install & Update |
 | -------------- | ------------ | ----------------- |
-| sw-arm-pnxl-[version] | The setup and DAQ procedures that go into /var/www on the Pixie Net XL’s Linux OS (including the binaries for the pulse processing FPGAs). |	Unzip, then copy to /var/www on the Pixie Net XL’s Linux OS |
-| sw-host-pnxl-[version] | 	Utilities for the UDP receiver and other DAQ utilities. Includes Igor xop version of UDP receiver |	Unzip, then copy executables to any folder on UDP receiver PC.  <br/> Igor extension udp_xop64.xop must be copied to C:\Program Files\WaveMetrics\Igor Pro 8 Folder\Igor Extensions (64-bit) or equivalent for Igor GUI |
-| sw-igor-pnxl-[version]	| Igor GUI for setup, data acquisition, and data visualization via serial port or network. |	First install Igor Pro 8 or higher. <br/> Then unzip and copy to any folder on a Windows PC. |
-| sd-bootfiles-pnxl-[version]	| The Zynq controller bootfiles for the FAT partition of the SD card. |	Unzip, then copy the 4 bootfiles to the FAT partition of the SD card
-| sd-image-pnxl-[version] | The full (zip compressed) SD card image, includes sw-arm-pnxl, sd-bootfiles-pnxl, and all Linux OS files Only updated for changes in Linux OS |	Unzip, then write to an SD card with a byte-by-byte image writer |
-| Pixie_Net_XL_Manual.pdf | The user manual. It is also included in sw-arm-pnxl. | please read |
+| sw-arm-pn-[version] | The setup and DAQ procedures that go into /var/www on the Pixie Net’s Linux OS. |	Unzip, then copy to /var/www on the Pixie Net's Linux OS |
+| sd-bootfiles-pn-[variant]-[version]	| The Zynq controller bootfiles for the FAT partition of the SD card. Includes the pulse processing firmware that is specific to each firmware variant |	Unzip, then copy the 4 bootfiles to the FAT partition of the SD card |
+| sd-image-pn-[version] | The full (zip compressed) SD card image, includes sw-arm-pn, sd-bootfiles-pn, and all Linux OS files Only updated for changes in Linux OS |	Unzip, then write to an SD card with a byte-by-byte image writer |
+| Pixie_Net_Manual.pdf | The user manual. It is also included in sw-arm-pnxl. | please read |
 
-For first time users, please also see the [Quick Start guide](./release_packages/PixieNetXL_QuickStart.pdf)
+For first time users, please also see the [Quick Start guide](./release_packages/PixieNet_QuickStart.pdf)
 
-## Older Releases 
+The PSA firmware requires the unit to be specifically licensed for the pulse shape analysis and constant fravtion timing functions. tehre is no physical difference in the hardware. 
 
-## Version 3.31, October 2022
-Release updates include
--	Debugged and tested CFD in variant 4
--	Updated TTCL interface for variant 1,4,7 (still preliminary)
--	Updated Igor list mode data displays and tables
+Typically, the software (sw-arm-pn) is the same for all firmware variants. FW/SW versions then vary only with the last digit can be assumed to be compatible.  
 
-Known bugs:
-- Variant 1: The automatic ADC initialization at boot time sometimes fails. This will be reported as a warning by ./progfippi. To correct, execute ./adcinit manually from the command line.  
 
-Supported variants are 
+## Older releases 
 
-| Variant ID	| Hardware Revision |	Firmware Revision |	Software Revision |
-| ----------- | ----------------- | ----------------- | ----------------- |
-| 7  | DB06, 8  channel, <br/> 14 bit, 500 MSPS, <br/> 10G <br/> Z-Turn Zynq controller | 0x3171 |	[sw-arm-pnxl: 3.31](./release_packages/sw-arm-pnxl-3p31.zip) <br/> sw-host-pnxl: 09072022 <br/> sw-igor-pnxl: 6.21 <br/> sd-bootfiles-pnxl: ZT-3.25 <br/> sd-image-pnxl: 09072022 |
-| 4	 | DB04, 16  channel, <br/> 14 bit, 250 MSPS, <br/> 10G <br/> Z-Turn Zynq controller <br/> Optional TTCL adapter |	0x3141 |   -"- |
-| 1	 | DB01, 8  channel, <br/> 14 bit, 125 MSPS, <br/> 10G <br/> Z-Turn Zynq controller |	0x3111 | -"- |	
-| 4W	| DB04, 16  channel, <br/> 14 bit, 250 MSPS, <br/> 1G (White Rabbit) <br/> MicroZed Zynq controller	| 0x2540 <br/> (unchanged from pre-release) |	sw-arm-pnxl: 3.31 <br/>  sw-host-pnxl: 09072022 <br/>  sw-igor-pnxl: 6.21 <br/> sd-bootfiles-pnxl: MZ-3.25 <br/>  sd-image-pnxl: 09072022 |
- 
+2.23: 
+- Added control bit CCSRC_VETO_RSTHI_12 for a custom variant. Ignored in standard or PSA code
 
-### Version 3.30, September 2022
-First commercial release. Supported variants are 
+2.22:
+- Updated webops pages and underlying functions, now usable as basic web API
+- Updated Igor Pro demo interface with web API I/O. Please contact XIA to try out
+- Added automatic execution of ./progfippi at boot time to Linux OS (systemd)
 
-| Variant ID	| Hardware Revision |	Firmware Revision |	Software Revision |
-| ----------- | ----------------- | ----------------- | ----------------- |
-| 7  | DB06, 8  channel, <br/> 14 bit, 500 MSPS, <br/> 10G <br/> Z-Turn Zynq controller | 0x3071 |	sw-arm-pnxl: 3.30 <br/> sw-host-pnxl: 09072022 <br/> sw-igor-pnxl: 6.20 <br/> sd-bootfiles-pnxl: ZT-3.25 <br/> sd-image-pnxl: 09072022 |
-| 4	 | DB04, 16  channel, <br/> 14 bit, 250 MSPS, <br/> 10G <br/> Z-Turn Zynq controller <br/> Optional TTCL adapter |	0x3041 |   -"- |
-| 1	 | DB01, 8  channel, <br/> 14 bit, 125 MSPS, <br/> 10G <br/> Z-Turn Zynq controller |	0x3011 | -"- |	
-| 4W	| DB04, 16  channel, <br/> 14 bit, 250 MSPS, <br/> 1G (White Rabbit) <br/> MicroZed Zynq controller	| 0x2540 <br/> (unchanged from pre-release) |	sw-arm-pnxl: 3.30 <br/>  sw-host-pnxl: 09072022 <br/>  sw-igor-pnxl: 6.20 <br/> sd-bootfiles-pnxl: MZ-3.25 <br/>  sd-image-pnxl: 09072022 |
+
