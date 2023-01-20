@@ -11,7 +11,8 @@ Supported variants are <br/>
 | Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
 | --------------| ------------| ----------------- | ----------------- | ------------- |
 | Standard | 0x0220 | [sd-bootfiles-pn-STD: 2.20](./release_packages/sd-bootfiles-pn-STD-2p20.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
-| PSA | 0x1223 | [sd-bootfiles-pn-PSA: 2.23](./release_packages/sd-bootfiles-pn-PSA-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
+| PSA <br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0x1223 | [sd-bootfiles-pn-PSA: 2.23](./release_packages/sd-bootfiles-pn-PSA-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
+| I2C <br/> Modifies PMOD I/O pins to support I2C and UART from Linux Also includes real time clock driver in Linux kernel | 0x5223 | [sd-bootfiles-pn-I2C: 2.23](./release_packages/sd-bootfiles-pn-I2C-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
 
 
 
@@ -28,9 +29,9 @@ A full Pixie-Net  software/firmware release consists of the following components
 
 Notes 
 - For first time users, please also see the [Quick Start guide](./release_packages/PixieNet_QuickStart.pdf)
-- The PSA firmware requires the unit to be specifically licensed for the pulse shape analysis and constant fravtion timing functions. There is no physical difference in the hardware. 
-- Typically, the software (sw-arm-pn) is the same for all firmware variants. FW/SW versions that vary only with the last digit can be assumed to be compatible. 
-- To download, click on the link, then the download button in the github page
+- The PSA firmware requires the unit to be specifically licensed for the pulse shape analysis and constant fraction timing functions. There is no physical difference in the hardware. 
+- Typically, the software (sw-arm-pn) is the same for all firmware variants. FW/SW versions that vary only with the last digit of the ID can be assumed to be compatible. 
+- To download, click on the link, then on the download button in the github page
 
 
 ## Older releases 
