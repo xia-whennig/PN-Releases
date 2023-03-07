@@ -1,18 +1,28 @@
 # Pixie-Net Release Notes
 
 
-## Version 2.24, December 2022
+## Version 2.25, March 2022
 Release updates include
  
-- SW: Added CFD debug values to LM data in run type 0x400
+- SW/FW: Added control bit CCSRA_NO_OVERLAP_08. Defaults to 1 (defaults.ini). 
+  This suppresses capture of overlapping waveforms, which may be problematic at high count rates. 
+
+- SW: Updated links to XIA support webpages
+
+- SW: Updated messages printed during DAQ by startdaq and acquire. 
+
+- SW: To avoid out-of-memory crashes, acquire will pause taking data when more than 100,000 
+ events are queued for writing to file and resume when queue drops to 80,000 events. 
+
 
 Supported variants are <br/>
 *Hardware Revision B*
 | Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
 | --------------| ------------| ----------------- | ----------------- | ------------- |
-| Standard | 0x0220 | [sd-bootfiles-pn-STD: 2.20](./release_packages/sd-bootfiles-pn-STD-2p20.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
-| PSA <br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0x1223 | [sd-bootfiles-pn-PSA: 2.23](./release_packages/sd-bootfiles-pn-PSA-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
-| I2C <br/> Modifies PMOD I/O pins to support I2C and UART from Linux Also includes real time clock driver in Linux kernel | 0x5223 | [sd-bootfiles-pn-I2C: 2.23](./release_packages/sd-bootfiles-pn-I2C-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
+| Standard | 0x0225 | [sd-bootfiles-pn-STD: 2.25](./release_packages/sd-bootfiles-pn-STD-2p25.zip)   | [sw-arm-pn: 2.25](./release_packages/sw-arm-pn-2p25.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
+| PSA <br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0x1225 | [sd-bootfiles-pn-PSA: 2.25](./release_packages/sd-bootfiles-pn-PSA-2p25.zip)   | [sw-arm-pn: 2.25](./release_packages/sw-arm-pn-2p25.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
+
+
 
 
 
@@ -35,6 +45,21 @@ Notes
 
 
 ## Older releases 
+
+## Version 2.24, December 2022
+Release updates include
+ 
+- SW: Added CFD debug values to LM data in run type 0x400
+
+Supported variants are <br/>
+*Hardware Revision B*
+| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
+| --------------| ------------| ----------------- | ----------------- | ------------- |
+| Standard | 0x0220 | [sd-bootfiles-pn-STD: 2.20](./release_packages/sd-bootfiles-pn-STD-2p20.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
+| PSA <br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0x1223 | [sd-bootfiles-pn-PSA: 2.23](./release_packages/sd-bootfiles-pn-PSA-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
+| I2C <br/> Modifies PMOD I/O pins to support I2C and UART from Linux Also includes real time clock driver in Linux kernel | 0x5223 | [sd-bootfiles-pn-I2C: 2.23](./release_packages/sd-bootfiles-pn-I2C-2p23.zip)   | [sw-arm-pn: 2.24](./release_packages/sw-arm-pn-2p24.zip) | [Pixie_Net_Manual: 2.22](./release_packages/Pixie_Net_Manual.pdf) | 
+
+
 
 2.23: 
 - Added control bit CCSRC_VETO_RSTHI_12 for a custom variant. Ignored in standard or PSA code
