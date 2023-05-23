@@ -1,7 +1,19 @@
 # Pixie-Net Release Notes
 
+## Version 2.27 PTP, May 2023
+Release updates include
+- FW: Recompiled latest FW with PTP support
+- SW: Clarify distinction between "current" and "file" webpages (work in progress)
+This version should ONLY be used for Pixie-Net units supporting PTP
 
-## Version 2.25, March 2022
+Supported variants are <br/>
+*Hardware Revision B*
+| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
+| --------------| ------------| ----------------- | ----------------- | ------------- |
+| PTP <br/> Provides hardware time stamping for LinuxPTP utility. Requires use of alternate Ethernet port | 0x2227 | [sd-bootfiles-pn-PTP: 2.27](./release_packages/sd-bootfiles-pn-PTP-2p27.zip)   | [sw-arm-pn: 2.27](./release_packages/sw-arm-pn-2p27.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
+ 
+
+## Version 2.25, March 2023
 Release updates include
  
 - SW/FW: Added control bit CCSRA_NO_OVERLAP_08. Defaults to 1 (defaults.ini). 
