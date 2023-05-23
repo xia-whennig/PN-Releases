@@ -4,6 +4,7 @@
 Release updates include
 - FW: Recompiled latest FW with PTP support
 - SW: Clarify distinction between "current" and "file" webpages (work in progress)
+
 This version should ONLY be used for Pixie-Net units supporting PTP
 
 Supported variants are <br/>
