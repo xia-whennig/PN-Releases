@@ -1,5 +1,26 @@
 # Pixie-Net Release Notes
 
+## Version 2.28, July 2023
+Release updates include
+ 
+- webpages:
+  Added webops page to view/edit all entries in settings.ini
+  Added option to MCA page to update periodically
+  Updated webpages and programs copying them to make clearer if data from file or from FPGA
+
+- Doc: Clarify manual for PTP variant
+
+- SW: Add an optional file name argument to startdaq and coincdaq. 
+
+
+Supported variants are <br/>
+*Hardware Revision B*
+| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
+| --------------| ------------| ----------------- | ----------------- | ------------- |
+| Standard | 0x0227 | [sd-bootfiles-pn-STD: 2.27](./release_packages/sd-bootfiles-pn-STD-2p27.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.28](./release_packages/Pixie_Net_Manual.pdf) | 
+| PSA <br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0x1228 | [sd-bootfiles-pn-PSA: 2.28](./release_packages/sd-bootfiles-pn-PSA-2p28.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.28](./release_packages/Pixie_Net_Manual.pdf) | 
+
+
 ## Version 2.27 PTP, May 2023
 Release updates include
 - FW: Recompiled latest FW with PTP support
@@ -14,26 +35,6 @@ Supported variants are <br/>
 | PTP <br/> Provides hardware time stamping for LinuxPTP utility. Requires use of alternate Ethernet port | 0x2227 | [sd-bootfiles-pn-PTP: 2.27](./release_packages/sd-bootfiles-pn-PTP-2p27.zip)   | [sw-arm-pn: 2.27](./release_packages/sw-arm-pn-2p27.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
  
 
-## Version 2.25, March 2023
-Release updates include
- 
-- SW/FW: Added control bit CCSRA_NO_OVERLAP_08. Defaults to 1 (defaults.ini). 
-  This suppresses capture of overlapping waveforms, which may be problematic at high count rates. 
-
-- SW: Updated links to XIA support webpages
-
-- SW: Updated messages printed during DAQ by startdaq and acquire. 
-
-- SW: To avoid out-of-memory crashes, acquire will pause taking data when more than 100,000 
- events are queued for writing to file and resume when queue drops to 80,000 events. 
-
-
-Supported variants are <br/>
-*Hardware Revision B*
-| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
-| --------------| ------------| ----------------- | ----------------- | ------------- |
-| Standard | 0x0225 | [sd-bootfiles-pn-STD: 2.25](./release_packages/sd-bootfiles-pn-STD-2p25.zip)   | [sw-arm-pn: 2.25](./release_packages/sw-arm-pn-2p25.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
-| PSA <br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0x1225 | [sd-bootfiles-pn-PSA: 2.25](./release_packages/sd-bootfiles-pn-PSA-2p25.zip)   | [sw-arm-pn: 2.25](./release_packages/sw-arm-pn-2p25.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
 
 
 
@@ -58,6 +59,19 @@ Notes
 
 
 ## Older releases 
+
+## Version 2.25, March 2023
+Release updates include
+ 
+- SW/FW: Added control bit CCSRA_NO_OVERLAP_08. Defaults to 1 (defaults.ini). 
+  This suppresses capture of overlapping waveforms, which may be problematic at high count rates. 
+
+- SW: Updated links to XIA support webpages
+
+- SW: Updated messages printed during DAQ by startdaq and acquire. 
+
+- SW: To avoid out-of-memory crashes, acquire will pause taking data when more than 100,000 
+ events are queued for writing to file and resume when queue drops to 80,000 events. 
 
 ## Version 2.24, December 2022
 Release updates include
