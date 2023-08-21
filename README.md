@@ -4,7 +4,7 @@
 Release updates include
  
 - SW: Updates for 14-bit firmware
-- SW: Re-introduced MAXWIDTH logic to reject pulse piled up on rising edge
+- SW: Re-introduced MAXWIDTH logic to reject pulses piled up on rising edge
 - FW: Updates for 14-bit hardware
 
 
