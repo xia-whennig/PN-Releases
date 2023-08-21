@@ -1,5 +1,62 @@
 # Pixie-Net Release Notes
 
+## Version 2.30, August 2023
+Release updates include
+ 
+- SW: Updates for 14-bit firmware
+- SW: Re-introduced MAXWIDTH logic to reject pulse piled up on rising edge
+- FW: Updates for 14-bit hardware
+
+
+Supported variants are <br/>
+*Hardware Revision B, 12-bit and 14-bit*
+| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
+| --------------| ------------| ----------------- | ----------------- | ------------- |
+| Standard 12 bit | 0xA991_0227 | [sd-bootfiles-pn-STD: 2.27](./release_packages/sd-bootfiles-pn-STD-2p27.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
+| PSA 12 bit<br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0xA991_1228 | [sd-bootfiles-pn-PSA: 2.28](./release_packages/sd-bootfiles-pn-PSA-2p28.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
+| Standard 14 bit | 0xA9A1_0230 | [sd-bootfiles-pn-14B: 2.30](./release_packages/sd-bootfiles-pn-14B-2p30.zip)   | [sw-arm-pn: 2.30](./release_packages/sw-arm-pn-2p30.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
+
+
+
+## Version 2.27 PTP, May 2023
+Release updates include
+- FW: Recompiled latest FW with PTP support
+- SW: Clarify distinction between "current" and "file" webpages (work in progress)
+
+This version should ONLY be used for Pixie-Net units supporting PTP
+
+Supported variants are <br/>
+*Hardware Revision B, 12-bit PTP*
+| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
+| --------------| ------------| ----------------- | ----------------- | ------------- |
+| PTP <br/> Provides hardware time stamping for LinuxPTP utility. Requires use of alternate Ethernet port | 0x2227 | [sd-bootfiles-pn-PTP: 2.27](./release_packages/sd-bootfiles-pn-PTP-2p27.zip)   | [sw-arm-pn: 2.27](./release_packages/sw-arm-pn-2p27.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
+ 
+
+
+
+
+
+
+ 
+## Release Information
+A full Pixie-Net  software/firmware release consists of the following components
+
+| Component name | Description	| Install & Update |
+| -------------- | ------------ | ----------------- |
+| Software <br/> sw-arm-pn-[version] | The setup and DAQ procedures that go into /var/www on the Pixie Net’s Linux OS. |	Unzip, then copy to /var/www on the Pixie Net's Linux OS |
+| Firmware <br/> sd-bootfiles-pn-[variant]-[version]	| The Zynq controller bootfiles for the FAT partition of the SD card. Includes the pulse processing firmware that is specific to each hardware and firmware variant |	Unzip, then copy the 4 bootfiles to the FAT partition of the SD card. Ensure it matches the hardware (STD = 12bit, 14B = 14bit, PTP = PTP Ethernet) |
+| SD image <br/> sd-image-pn-[version] | The full (zip compressed) SD card image, includes sw-arm-pn, sd-bootfiles-pn, and all Linux OS files Only updated for changes in Linux OS |	Unzip, then write to an SD card with a byte-by-byte image writer. If an older version, update software and firmware |
+| Manual <br/> Pixie_Net_Manual.pdf | The user manual. It is also included in sw-arm-pnxl. | please read |
+
+Notes 
+- For first time users, please also see the [Quick Start guide](./release_packages/PixieNet_QuickStart.pdf)
+- The PSA firmware requires the unit to be specifically licensed for the pulse shape analysis and constant fraction timing functions. There is no physical difference in the hardware. 
+- Typically, the software (sw-arm-pn) is the same for all firmware variants. FW/SW versions that vary only with the last digit of the ID can be assumed to be compatible. 
+- To download, click on the link, then on the download button in the github page
+
+
+## Older releases
+
 ## Version 2.28, July 2023
 Release updates include
  
@@ -21,44 +78,6 @@ Supported variants are <br/>
 | PSA <br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0x1228 | [sd-bootfiles-pn-PSA: 2.28](./release_packages/sd-bootfiles-pn-PSA-2p28.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.28](./release_packages/Pixie_Net_Manual.pdf) | 
 
 
-## Version 2.27 PTP, May 2023
-Release updates include
-- FW: Recompiled latest FW with PTP support
-- SW: Clarify distinction between "current" and "file" webpages (work in progress)
-
-This version should ONLY be used for Pixie-Net units supporting PTP
-
-Supported variants are <br/>
-*Hardware Revision B*
-| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
-| --------------| ------------| ----------------- | ----------------- | ------------- |
-| PTP <br/> Provides hardware time stamping for LinuxPTP utility. Requires use of alternate Ethernet port | 0x2227 | [sd-bootfiles-pn-PTP: 2.27](./release_packages/sd-bootfiles-pn-PTP-2p27.zip)   | [sw-arm-pn: 2.27](./release_packages/sw-arm-pn-2p27.zip) | [Pixie_Net_Manual: 2.25](./release_packages/Pixie_Net_Manual.pdf) | 
- 
-
-
-
-
-
-
- 
-## Release Information
-A full Pixie-Net  software/firmware release consists of the following components
-
-| Component name | Description	| Install & Update |
-| -------------- | ------------ | ----------------- |
-| Software <br/> sw-arm-pn-[version] | The setup and DAQ procedures that go into /var/www on the Pixie Net’s Linux OS. |	Unzip, then copy to /var/www on the Pixie Net's Linux OS |
-| Firmware <br/> sd-bootfiles-pn-[variant]-[version]	| The Zynq controller bootfiles for the FAT partition of the SD card. Includes the pulse processing firmware that is specific to each firmware variant |	Unzip, then copy the 4 bootfiles to the FAT partition of the SD card |
-| SD image <br/> sd-image-pn-[version] | The full (zip compressed) SD card image, includes sw-arm-pn, sd-bootfiles-pn, and all Linux OS files Only updated for changes in Linux OS |	Unzip, then write to an SD card with a byte-by-byte image writer. If an older version, update software and firmware |
-| Manual <br/> Pixie_Net_Manual.pdf | The user manual. It is also included in sw-arm-pnxl. | please read |
-
-Notes 
-- For first time users, please also see the [Quick Start guide](./release_packages/PixieNet_QuickStart.pdf)
-- The PSA firmware requires the unit to be specifically licensed for the pulse shape analysis and constant fraction timing functions. There is no physical difference in the hardware. 
-- Typically, the software (sw-arm-pn) is the same for all firmware variants. FW/SW versions that vary only with the last digit of the ID can be assumed to be compatible. 
-- To download, click on the link, then on the download button in the github page
-
-
-## Older releases 
 
 ## Version 2.25, March 2023
 Release updates include
