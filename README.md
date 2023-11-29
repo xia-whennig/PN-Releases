@@ -1,20 +1,18 @@
 # Pixie-Net Release Notes
 
-## Version 2.30, August 2023
+## Version 2.31, November 2023
 Release updates include
  
-- SW: Updates for 14-bit firmware
-- SW: Re-introduced MAXWIDTH logic to reject pulses piled up on rising edge
-- FW: Updates for 14-bit hardware
-
+- FW: apply bug fixes for system time
+- Manual: Add notes on using arp -a to find IP by MAC
 
 Supported variants are <br/>
 *Hardware Revision B, 12-bit and 14-bit*
 | Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
 | --------------| ------------| ----------------- | ----------------- | ------------- |
-| Standard 12 bit | 0xA991_0227 | [sd-bootfiles-pn-STD: 2.27](./release_packages/sd-bootfiles-pn-STD-2p27.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
-| PSA 12 bit<br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0xA991_1228 | [sd-bootfiles-pn-PSA: 2.28](./release_packages/sd-bootfiles-pn-PSA-2p28.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
-| Standard 14 bit | 0xA9A1_0230 | [sd-bootfiles-pn-14B: 2.30](./release_packages/sd-bootfiles-pn-14B-2p30.zip)   | [sw-arm-pn: 2.30](./release_packages/sw-arm-pn-2p30.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
+| Standard 12 bit | 0xA991_0231 | [sd-bootfiles-pn-STD: 2.31](./release_packages/sd-bootfiles-pn-STD-2p31.zip)   | [sw-arm-pn: 2.30](./release_packages/sw-arm-pn-2p30.zip) | [Pixie_Net_Manual: 2.31](./release_packages/Pixie_Net_Manual.pdf) | 
+| Standard 14 bit | 0xA9A1_0231 | [sd-bootfiles-pn-14B: 2.31](./release_packages/sd-bootfiles-pn-14B-2p31.zip)   | [sw-arm-pn: 2.30](./release_packages/sw-arm-pn-2p30.zip) | [Pixie_Net_Manual: 2.31](./release_packages/Pixie_Net_Manual.pdf) | 
+| PSA 12 bit<br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0xA991_1231 | [sd-bootfiles-pn-PSA: 2.31](./release_packages/sd-bootfiles-pn-PSA-2p31.zip)   | [sw-arm-pn: 2.30](./release_packages/sw-arm-pn-2p30.zip) | [Pixie_Net_Manual: 2.31](./release_packages/Pixie_Net_Manual.pdf) | 
 
 
 
@@ -37,7 +35,7 @@ Supported variants are <br/>
 
 
 
- 
+
 ## Release Information
 A full Pixie-Net  software/firmware release consists of the following components
 
@@ -56,6 +54,23 @@ Notes
 
 
 ## Older releases
+
+## Version 2.30, August 2023
+Release updates include
+ 
+- SW: Updates for 14-bit firmware
+- SW: Re-introduced MAXWIDTH logic to reject pulses piled up on rising edge
+- FW: Updates for 14-bit hardware
+
+
+Supported variants are <br/>
+*Hardware Revision B, 12-bit and 14-bit*
+| Firmware Type |	Firmware ID |	Firmware Files |	Software Files | Documentation |
+| --------------| ------------| ----------------- | ----------------- | ------------- |
+| Standard 12 bit | 0xA991_0227 | [sd-bootfiles-pn-STD: 2.27](./release_packages/sd-bootfiles-pn-STD-2p27.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
+| PSA 12 bit<br/> Includes pulse shape analysis functions e.g. to distinguish gammas and neutrons, and constant fraction timing logic. Licensing required | 0xA991_1228 | [sd-bootfiles-pn-PSA: 2.28](./release_packages/sd-bootfiles-pn-PSA-2p28.zip)   | [sw-arm-pn: 2.28](./release_packages/sw-arm-pn-2p28.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
+| Standard 14 bit | 0xA9A1_0230 | [sd-bootfiles-pn-14B: 2.30](./release_packages/sd-bootfiles-pn-14B-2p30.zip)   | [sw-arm-pn: 2.30](./release_packages/sw-arm-pn-2p30.zip) | [Pixie_Net_Manual: 2.30](./release_packages/Pixie_Net_Manual.pdf) | 
+
 
 ## Version 2.28, July 2023
 Release updates include
